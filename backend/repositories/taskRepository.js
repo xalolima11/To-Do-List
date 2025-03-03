@@ -1,6 +1,6 @@
 const Task = require("../domain/task");
 
-class TodoRepository {
+class TaskRepository {
     async getAll() {
         return await Task.find();
     }
@@ -23,4 +23,4 @@ class TodoRepository {
     }
 }
 
-module.exports = new TodoRepository();
+module.exports = new TaskRepository();
