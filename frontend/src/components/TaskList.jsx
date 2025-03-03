@@ -65,7 +65,7 @@ const TaskList = () => {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
         />
-        <button onClick={handleAddTask} className="button-add">
+        <button onClick={handleAddTask} className="button button-add">
           Adicionar
         </button>
       </div>

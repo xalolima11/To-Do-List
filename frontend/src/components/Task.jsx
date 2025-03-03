@@ -9,13 +9,13 @@ const Task = ({ task, onToggle, onDelete }) => {
       <div>
         <button
           onClick={() => onToggle(task._id, !task.completed)}
-          className="button-toggle"
+          className="button button-toggle"
           disabled={task.completed} // Disable button when task is completed
           style={{ backgroundColor: task.completed ? "gray" : "blue" }}
         >
           {task.completed ? "Concluído" : "Concluir"}
         </button>
-        <button onClick={() => onDelete(task._id)} className="button-delete">
+        <button onClick={() => onDelete(task._id)} className="button button-delete">
           Excluir
         </button>
       </div>

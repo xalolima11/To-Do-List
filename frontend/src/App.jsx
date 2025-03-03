@@ -1,9 +1,10 @@
 import TaskList from "./components/TaskList";
+import "./styles.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-      <TaskList />
+    <div className="app-container">
+      <TaskList/>
     </div>
   );
 }
