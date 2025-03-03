@@ -49,7 +49,6 @@ Aplicativo Full-Stack de Lista de Tarefas (To-Do List) desenvolvido com **React 
 3. Crie um arquivo **.env** na pasta `backend` e adicione a string de conexão com o MongoDB Atlas:
    ```sh
    MONGO_URI=mongodb+srv://seu_usuario:senha@cluster.mongodb.net/todoDB
-   PORT=5000
    ```
 4. Inicie o servidor:
    ```sh
@@ -81,6 +80,6 @@ Aplicativo Full-Stack de Lista de Tarefas (To-Do List) desenvolvido com **React 
 ### 📌 **Tarefas (`/tasks`)**
 - `GET /tasks` → Retorna todas as tarefas
 - `POST /tasks` → Adiciona uma nova tarefa `{ title: "Nova Tarefa", completed: false }`
-- `PUT /tasks/:id` → Atualiza uma tarefa `{ completed: true }`
+- `PATCH /tasks/:id` → Atualiza uma tarefa `{ completed: true }`
 - `DELETE /tasks/:id` → Remove uma tarefa
 
