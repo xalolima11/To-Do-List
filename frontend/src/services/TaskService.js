@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/tasks"; // Adjust this URL if needed
+const API_URL = "http://localhost:5000/api/tasks";
 
 const getTasks = async () => {
   return await axios.get(API_URL);
@@ -18,7 +18,6 @@ const deleteTask = async (taskId) => {
   return await axios.delete(`${API_URL}/${taskId}`);
 };
 
-// Export the functions properly
 const TaskService = {
   getTasks,
   createTask,

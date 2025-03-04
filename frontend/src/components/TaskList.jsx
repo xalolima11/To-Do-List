@@ -3,12 +3,10 @@ import TaskService from "../services/TaskService";
 import Task from "./Task";
 
 const TaskList = () => {
-  // Estado para armazenar as tarefas
   const [tasks, setTasks] = useState([]);
-  // Estado para armazenar o valor do input
   const [newTask, setNewTask] = useState("");
 
-  // Função para carregar as tarefas ao montar o componente
+  // Função para carregar as tarefas
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -24,18 +22,18 @@ const TaskList = () => {
 
   // Função para adicionar uma nova tarefa
   const handleAddTask = async () => {
-    if (!newTask.trim()) return; // Evita adicionar tarefas vazias
+    if (!newTask.trim()) return;
 
     try {
       const response = await TaskService.createTask({ title: newTask, completed: false });
       setTasks([...tasks, response.data]); // Atualiza a lista de tarefas
-      setNewTask(""); // Limpa o input
+      setNewTask("");
     } catch (error) {
       console.error("Erro ao adicionar tarefa", error);
     }
   };
 
-  // Função para alternar o status de concluído
+  // Função para concluir uma tarefa
   const handleToggleTask = async (taskId, completed) => {
     await TaskService.updateTask(taskId, { completed });
     setTasks((prevTasks) =>
