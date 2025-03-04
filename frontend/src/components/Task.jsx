@@ -1,10 +1,8 @@
-import { useState } from "react";
-
 const Task = ({ task, onToggle, onDelete }) => {
   return (
     <div className="task">
       <span className={task.completed ? "completed" : ""}>
-        {task.title} {task.completed && "(Concluído)"}
+        {task.title} {task.completed ? "(Concluído)" : ""}
       </span>
       <div>
         <button

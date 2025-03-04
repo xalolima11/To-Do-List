@@ -39,19 +39,19 @@ Aplicativo Full-Stack de Lista de Tarefas (To-Do List) desenvolvido com **React 
 
 ### 1️⃣ Configuração do Backend (Servidor)
 1. Acesse a pasta do backend:
-   ```sh
+   ```
    cd backend
    ```
 2. Instale as dependências:
-   ```sh
+   ```
    npm install
    ```
 3. Crie um arquivo **.env** na pasta `backend` e adicione a string de conexão com o MongoDB Atlas:
-   ```sh
+   ```
    MONGO_URI=mongodb+srv://seu_usuario:senha@cluster.mongodb.net/todoDB
    ```
 4. Inicie o servidor:
-   ```sh
+   ```
    npm start
    ```
    O backend será executado em **http://localhost:5000**.
@@ -60,15 +60,15 @@ Aplicativo Full-Stack de Lista de Tarefas (To-Do List) desenvolvido com **React 
 
 ### 2️⃣ Configuração do Frontend (Cliente)
 1. Acesse a pasta do frontend:
-   ```sh
+   ```
    cd frontend
    ```
 2. Instale as dependências:
-   ```sh
+   ```
    npm install
    ```
 3. Inicie o frontend:
-   ```sh
+   ```
    npm run dev
    ```
    O frontend será executado em **http://localhost:5173**.

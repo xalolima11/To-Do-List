@@ -11,6 +11,7 @@ exports.createTask = async (req, res) => {
     }
 };
 
+
 // Get tasks
 exports.getAllTasks = async (req, res) => {
     try {

@@ -26,7 +26,7 @@ const TaskList = () => {
 
     try {
       const response = await TaskService.createTask({ title: newTask, completed: false });
-      setTasks([...tasks, response.data]); // Atualiza a lista de tarefas
+      setTasks([...tasks, response.data]);
       setNewTask("");
     } catch (error) {
       console.error("Erro ao adicionar tarefa", error);
@@ -37,12 +37,14 @@ const TaskList = () => {
   const handleToggleTask = async (taskId, completed) => {
     await TaskService.updateTask(taskId, { completed });
     setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task._id === taskId ? { ...task, completed } : task
-      )
+      prevTasks.map((task) => {
+        if (task._id === taskId) {
+          return { ...task, completed }; 
+        }
+        return task;
+      })
     );
   };
-  
 
   // Função para deletar uma tarefa
   const handleDeleteTask = async (taskId) => {
@@ -60,6 +62,7 @@ const TaskList = () => {
       <div>
         <input
           type="text"
+          className="input-box"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
         />
