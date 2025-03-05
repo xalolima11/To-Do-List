@@ -52,8 +52,8 @@ exports.markTaskCompleted = async (req, res) => {
 exports.deleteTask = async (req, res) => {
     try {
         await TaskModel.findByIdAndDelete(req.params.id);
-        res.status(200).json({ message: "Tarefa deletada com sucesso" });
+        res.status(200).json({ message: "Tarefa removida com sucesso" });
     } catch (error) {
-        res.status(500).json({ error: "Erro ao deletar tarefa" });
+        res.status(500).json({ error: "Erro ao remover tarefa" });
     }
 };

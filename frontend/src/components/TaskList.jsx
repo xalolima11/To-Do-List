@@ -6,7 +6,6 @@ const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
-  // Função para carregar as tarefas
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -46,13 +45,16 @@ const TaskList = () => {
     );
   };
 
-  // Função para deletar uma tarefa
+  // Função para remover uma tarefa
   const handleDeleteTask = async (taskId) => {
+    const confirmDelete = window.confirm("Tens a certeza que queres remover esta tarefa?");
+    if (!confirmDelete) return;
+
     try {
       await TaskService.deleteTask(taskId);
       setTasks(tasks.filter((task) => task._id !== taskId));
     } catch (error) {
-      console.error("Erro ao deletar tarefa", error);
+      console.error("Erro ao remover tarefa", error);
     }
   };
 
